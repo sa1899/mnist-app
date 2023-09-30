@@ -5,7 +5,7 @@ from flask import Flask, request, redirect, render_template, flash
 from werkzeug.utils import secure_filename
 from tensorflow.keras.models import Sequential, load_model
 from tensorflow.keras.preprocessing import image
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 import cv2
 from PIL import Image
 import numpy as np
@@ -112,11 +112,11 @@ def upload_file():
             img_data_final = img_data_eroded / 255.0
 
             # Save processed images for display
-            images["Loaded Image"] = save_and_display_img(img_pil)
-            images["Binarized"] = save_and_display_img(Image.fromarray(img_data_binarized))
-            images["Dilated"] = save_and_display_img(Image.fromarray(img_data_dilated))
-            images["Eroded"] = save_and_display_img(Image.fromarray(img_data_eroded))
-            images["Final Processed"] = save_and_display_img(Image.fromarray((img_data_final * 255).astype(np.uint8)))
+            #images["Loaded Image"] = save_and_display_img(img_pil)
+            #images["Binarized"] = save_and_display_img(Image.fromarray(img_data_binarized))
+            #images["Dilated"] = save_and_display_img(Image.fromarray(img_data_dilated))
+            #images["Eroded"] = save_and_display_img(Image.fromarray(img_data_eroded))
+            #images["Final Processed"] = save_and_display_img(Image.fromarray((img_data_final * 255).astype(np.uint8)))
 
             # Make predictions
             data = img_data_final.reshape(1, 28, 28, 1)
